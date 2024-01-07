@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Climate-Sense</title>
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="shortcut icon" href="images/weather-favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <header class="header">
+        <a class="logo"><img src="images/weather-favicon.ico" alt="logo" style="height: 5vh;">Climate-Sense</a>
+        <nav class="navbar">
+            <form action="/weather-details" method="post">
+                <input type="text" name="search" id="search-text" placeholder="Enter City" required style="text-align: left;">
+                <button class="search" type="submit"> 
+                    <i class="fas fa-search"></i> 
+                </button>
+            </form>
+        </nav>
+    </header>

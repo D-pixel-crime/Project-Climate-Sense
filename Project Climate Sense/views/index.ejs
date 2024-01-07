@@ -1,0 +1,69 @@
+<%- include("partials/header.ejs") %>
+
+    <% if(locals.temp){ %>
+        <div class="weather-container" style="color: white;">
+            <div class="city-container">
+                <h1 class="city-name">
+                    <%= city_name %>
+                </h1>
+            </div>
+            <div class="details">
+                <div class="weather-boxes" id="main">
+                    <div class="temp-container">
+                        <h2 class="temp">
+                            <%= temp %>&deg; C
+                        </h2>
+                        <p class="feels-like"><span>Feels like</span>
+                            <%= feels_like %>&deg; C
+                        </p>
+                    </div>
+                    <div class="min-max">
+
+                        <p class="min-temp"><span>Min-Temperature:</span>
+                            <%= min_temp %>&deg; C
+                        </p>
+                        <p class="max-temp"><span>Max-Temperature:</span>
+                            <%= max_temp %>&deg; C
+                        </p>
+                    </div>
+                </div>
+                <div class="weather-boxes" id="description">
+                    <h2 class="current-weather">Current Weather</h2>
+                    <div class="weather-condition">
+                        <img class="icon" src="https://openweathermap.org/img/wn/<%= icon %>@2x.png" alt="">
+                        <p class="condition" style="font-weight:bolder;">
+                            <%= weather_condition %>
+                        </p>
+                        <p class="condition_description" style="text-transform: capitalize;">
+                            <span>Description:</span>
+                            <%= condition_description %>
+                        </p>
+                    </div>
+                </div>
+                <div class="weather-boxes" id="extra">
+                    <h2>Miscellaneous</h2>
+                    <div>
+                        <p class="pressure"><span>Pressure:</span>
+                            <%= pressure %> Pa.
+                        </p>
+                        <p class="humidity"><span>Humidity:</span>
+                            <%= humidity %>%
+                        </p>
+                        <p class="wind-speed"><span>Wind-Speed:</span>
+                            <%= windSpeed %> kmph
+                        </p>
+                        <p class="visibility"><span>Visibility is</span>
+                            <%= visibility %> km
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <% }else if(locals.error){ %>
+                <h2 style="word-spacing: 1rem;"><%= error %></h2>
+            <% }else{ %>
+                <h2 class="welcome">Welcome to Climate-Sense! Get real-time weather news of selected location.</h2>
+
+                <% } %>
+
+                    <%- include("partials/footer.ejs") %>

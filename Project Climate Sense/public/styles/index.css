@@ -1,0 +1,371 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+body {
+    min-height: 90vh;
+    max-width: 100%;
+    background-image: url("../images/background.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin-top: 10vh;
+}
+
+.header {
+    height: 10vh;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 0px 50px;
+    background-color: rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    border-bottom: 3px solid rgba(255, 255, 255, 0.4);
+    z-index: 2;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(12, 46, 237, 0.456), transparent);
+    transition: 4s;
+    z-index: -1;
+}
+
+.header:hover::before {
+    left: 100%;
+
+}
+
+.logo {
+    font-weight: 600;
+    cursor: default;
+    text-decoration: none;
+    color: white;
+    font-family: 'Pacifico', cursive;
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    letter-spacing: 1.5px;
+    color: blanchedalmond;
+}
+
+.welcome {
+    font-family: 'Pacifico', cursive;
+    max-width: 100vw;
+    font-size: 5vw;
+    border: none;
+    text-align: center;
+    position: absolute;
+    top: 30%;
+    background: linear-gradient(90deg,aqua, blue, white,blue,aqua);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+.weather-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    margin: 0rem 1rem;
+}
+
+.details {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.city-name {
+    font-family: 'Monoton', sans-serif;
+    letter-spacing: 0.2rem;
+    overflow: hidden;
+    width: 100%;
+    white-space: normal;
+    margin: 2rem 0rem;
+    font-size: 4.5rem;
+    color: blanchedalmond;
+    background: linear-gradient(90deg,aqua, tomato, white,tomato,aqua);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+}
+
+
+
+.icon {
+    margin-top: -2rem;
+    background-color: gainsboro;
+    border-radius: 15px;
+}
+
+#extra div {
+    margin-top: -7rem;
+}
+
+#main h2 {
+    font-size: 3rem;
+}
+
+#extra h2 {
+    margin-top: 1rem;
+}
+
+.min-max {
+    margin-top: -7rem;
+    margin-bottom: 1rem;
+}
+
+.current-weather {
+    margin-top: -1rem;
+}
+
+p {
+    margin: 1rem 0rem;
+    font-size: 1.2rem;
+    font-family: 'Special Elite', system-ui;
+    word-spacing: 0.2rem;
+}
+
+p span {
+    color: springgreen;
+    font-weight: bolder;
+    letter-spacing: 1px;
+}
+
+.condition {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 2rem;
+    border-bottom: 5px solid gold;
+    font-family: 'Rubik Doodle Shadow', system-ui;
+    color: white;
+}
+
+.weather-condition {
+    margin-top: -5rem;
+}
+
+.weather-boxes {
+    border-radius: 15px;
+    background: linear-gradient(var(--rotate),
+            #5ddcff,
+            transparent 43%,
+            #4e00c2);
+    animation: spin 4s linear infinite;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border: 3.5px solid rgba(255, 255, 255, 0.4);
+    border-radius: 15px;
+    margin: 0rem 2rem 2rem 2rem;
+    height: 60vh;
+    width: 25vw;
+    padding: 1rem;
+    backdrop-filter: blur(5px);
+}
+
+.slide-down {
+    animation: slideDown 1s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes slideDown {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.weather-boxes:hover {
+    animation: none;
+    box-shadow: 5px 5px 5px 1px white;
+}
+
+@property --rotate {
+    syntax: "<angle>";
+    initial-value: 132deg;
+    inherits: false;
+}
+
+@keyframes spin {
+    0% {
+        --rotate: 0deg;
+    }
+
+    100% {
+        --rotate: 360deg;
+    }
+}
+
+form {
+    display: flex;
+    cursor: pointer;
+    padding: 5px;
+    border: 1px solid white;
+    background: none;
+    align-items: center;
+    box-shadow: 0px 10px 25px rgba(255, 255, 255, 0.3);
+    transition: 1.5s;
+    border-radius: 3.5px;
+}
+
+#search-text {
+    width: 0;
+    outline: none;
+    border: none;
+    font-weight: bolder;
+    transition: 0.8s;
+    background: white;
+    font-size: 1rem;
+    background: none;
+}
+
+.fas {
+    font-size: 18px;
+    color: white;
+    border: none;
+    padding: 3px;
+    background: none;
+}
+
+form:hover #search-text {
+    width: 300px;
+}
+
+form:hover {
+    background: white;
+}
+
+form:hover .fas {
+    color: darkorchid;
+}
+
+.search {
+    border: none;
+    cursor: pointer;
+    background: none;
+}
+
+@media only screen and (max-width:700px) {
+    .details {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        z-index: -1;
+    }
+
+    .weather-container {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .weather-boxes {
+        width: 80vw;
+        height: 50vh;
+        margin: 1rem 0rem;
+    }
+
+    .weather-boxes div {
+        margin: 0rem 0rem;
+    }
+
+    .city-name {
+        font-size: 8vw;
+        max-width: 90vw;
+        overflow: scroll;
+    }
+
+    .header {
+        padding: 0rem 0.5rem;
+    }
+
+    form:hover #search-text {
+        width: 100px;
+    }
+
+    #extra h2 {
+        margin: 2rem 0rem 0rem 0rem;
+    }
+
+    #main h2 {
+        margin-top: 1rem;
+    }
+
+    #extra div {
+        margin: 0;
+    }
+
+    .logo {
+        font-size: 1rem;
+    }
+
+    h2,
+    #main h2 {
+        font-size: 8vw;
+    }
+
+    p {
+        font-size: 5vw;
+    }
+
+    .icon {
+        margin-top: 10px;
+    }
+}
+
+@media only screen and (max-width:1295px) and (min-width:701px) {
+
+    .weather-boxes h2,
+    #main h2 {
+        font-size: 3vw;
+    }
+
+    .weather-boxes div,
+    h2 {
+        margin: 0;
+    }
+
+    .weather-boxes p {
+        font-size: 1.5vw;
+    }
+
+    .weather-boxes {
+        height: 55vh;
+    }
+
+    #main h2 {
+        margin-top: 3.5rem;
+    }
+}
